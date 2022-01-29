@@ -32,11 +32,12 @@ $(document).ready(function () {
     $('#text-6').html(localStorage.getItem('time6'));
     $('#text-7').html(localStorage.getItem('time7'));
     $('#text-8').html(localStorage.getItem('time8'));
-    $('#text-9').html(localStorage.getItem('time9'));
+    $('#text-9').html(localStorage.getItem('time9')); 
     $('#text-10').html(localStorage.getItem('time10'));
 
-    
-//****Function: Save each slot & text to local storage when "Save" button clicked
+
+
+    //****FUNCTION: Save each slot & text to local storage when "Save" button clicked
     $('btn').on("click", function () {
         localStorage.setItem('time1', $('#text-1').val());
         localStorage.setItem('time2', $('#text-2').val());
@@ -52,8 +53,26 @@ $(document).ready(function () {
 
 
 
-    
+    //***FUNCTION-------Color code each time-slot for past present and future------
+    function colorCodeTime() {
 
+        $('.time-block').each(function () {
+            var timeBlock = parseInt($(this).attr('id'));
+
+            if (currentTime < timeBlock) {
+                $(this).addClass('future');
+            }
+            else if (currentTime > timeBlock) {
+                $(this).addClass('past');
+            }
+            else if (currentTime = timeBlock) {
+                $(this).addClass('present')
+            }
+
+        });
+
+    }
+    colorCodeTime()
 });
 
 //-------------------END READY FUNCTION---------------------------------------
