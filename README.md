@@ -11,8 +11,8 @@ When or if the user refreshes the page, their previously saved tasks continue to
 ## 
 As the hours go on throughout the work day, the past tasks turn to grey, the present tasks (based on the hour) turn to red and the future tasks turn to green. The time for the webpage is based off the users current location and time from their computer.
 
-Gitpages: 
+Gitpages: https://zela7alex.github.io/work-day-scheduler/
 ## 
 Github: https://github.com/Zela7alex/work-day-scheduler 
 
-
+![Screen Shot 2022-01-30 at 12 55 37 PM](https://user-images.githubusercontent.com/93490778/151711701-84a59dd0-6ff7-4a47-9170-170b71081441.png)
