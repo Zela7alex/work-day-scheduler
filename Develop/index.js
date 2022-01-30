@@ -5,16 +5,16 @@ $('#currentDay').append(theDay);
 
 
 //---Create the variables to save "time" text to local storage-------
-var time1 = $("1").text();
-var time2 = $("2").text();
-var time3 = $("3").text();
-var time4 = $("4").text();
-var time5 = $("5").text();
-var time6 = $("6").text();
-var time7 = $("7").text();
-var time8 = $("8").text();
-var time9 = $("9").text();
-var time10 = $("10").text();
+var time1 = $("9").text();
+var time2 = $("10").text();
+var time3 = $("11").text();
+var time4 = $("12").text();
+var time5 = $("13").text();
+var time6 = $("14").text();
+var time7 = $("15").text();
+var time8 = $("16").text();
+var time9 = $("17").text();
+var time10 = $("18").text();
 
 //Current time done with moment.js
 var currentTime = moment().hours();
@@ -32,13 +32,13 @@ $(document).ready(function () {
     $('#text-6').html(localStorage.getItem('time6'));
     $('#text-7').html(localStorage.getItem('time7'));
     $('#text-8').html(localStorage.getItem('time8'));
-    $('#text-9').html(localStorage.getItem('time9')); 
+    $('#text-9').html(localStorage.getItem('time9'));
     $('#text-10').html(localStorage.getItem('time10'));
 
 
 
     //****FUNCTION: Save each slot & text to local storage when "Save" button clicked
-    $('btn').on("click", function () {
+    $('button').on("click", function () {
         localStorage.setItem('time1', $('#text-1').val());
         localStorage.setItem('time2', $('#text-2').val());
         localStorage.setItem('time3', $('#text-3').val());
@@ -60,16 +60,16 @@ $(document).ready(function () {
             var timeBlock = parseInt($(this).attr('id'));
 
             if (currentTime < timeBlock) {
-                $(this).addClass('future');
+                $(this).addClass('future').removeClass("past present");
             }
             else if (currentTime > timeBlock) {
-                $(this).addClass('past');
+                $(this).addClass('past').removeClass("present future");
             }
-            else if (currentTime = timeBlock) {
-                $(this).addClass('present')
+            else if (currentTime === timeBlock) {
+                $(this).addClass('present').removeClass("past future")
             }
-
         });
+
 
     }
     colorCodeTime()
